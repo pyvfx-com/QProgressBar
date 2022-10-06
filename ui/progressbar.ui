@@ -69,7 +69,56 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QPlainTextEdit" name="plainTextEdit_output"/>
+          <widget class="QFrame" name="frame_2">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="font">
+               <font>
+                <pointsize>25</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Done</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QPushButton" name="allnode">
+                <property name="text">
+                 <string>All Nodes</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="selnode">
+                <property name="text">
+                 <string>Selected Node</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QPushButton" name="chenge_tilecolor">
+              <property name="text">
+               <string>Change Color</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </item>
          <item>
           <widget class="QProgressBar" name="progressBar">

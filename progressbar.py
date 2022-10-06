@@ -20,22 +20,14 @@ class progress_ui(Ui_Form, QWidget):
 
         self.Qprogress_bar = QtCore.QThread()
         self.Qprogress_bar.run = self.test_progress
-
         self.Qprogress_bar.start()
 
     def test_progress(self):
         binlist = os.listdir('/usr/bin/')
         for count, a in enumerate(binlist):
             time.sleep(.01)
-            # percentage = len(binlist) / (count + 1) * 100
             percentage = (round(100 * (count + 1) / len(binlist)))
-            self.progressBar.setValue(percentage)  # count * 100 / 100
-            print(percentage)
-
-
-def _show():
-    _ui = progress_ui()
-    _ui.show()
+            self.progressBar.setValue(percentage)
 
 
 # For widgets
