@@ -33,9 +33,13 @@ class progress_ui(Ui_Form, QWidget):
             print(percentage)
 
 
+def _show():
+    _ui = progress_ui()
+    _ui.show()
+
+
 # For widgets
 if __name__ == '__main__':
-    app = QApplication()
     widgets = progress_ui()
     widgets.show()
-    sys.exit(app.exec_())
+
