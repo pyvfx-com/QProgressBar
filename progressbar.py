@@ -40,6 +40,7 @@ def _show():
 
 # For widgets
 if __name__ == '__main__':
+    app = QApplication()
     widgets = progress_ui()
     widgets.show()
-
+    sys.exit(app.exec_())
