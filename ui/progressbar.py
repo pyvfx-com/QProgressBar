@@ -36,10 +36,43 @@ class Ui_Form(object):
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout = QVBoxLayout(self.frame)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.plainTextEdit_output = QPlainTextEdit(self.frame)
-        self.plainTextEdit_output.setObjectName(u"plainTextEdit_output")
+        self.frame_2 = QFrame(self.frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.frame_2)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.label = QLabel(self.frame_2)
+        self.label.setObjectName(u"label")
+        font = QFont()
+        font.setPointSize(25)
+        self.label.setFont(font)
+        self.label.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout.addWidget(self.plainTextEdit_output)
+        self.verticalLayout_2.addWidget(self.label)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.allnode = QPushButton(self.frame_2)
+        self.allnode.setObjectName(u"allnode")
+
+        self.horizontalLayout.addWidget(self.allnode)
+
+        self.selnode = QPushButton(self.frame_2)
+        self.selnode.setObjectName(u"selnode")
+
+        self.horizontalLayout.addWidget(self.selnode)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout)
+
+        self.chenge_tilecolor = QPushButton(self.frame_2)
+        self.chenge_tilecolor.setObjectName(u"chenge_tilecolor")
+
+        self.verticalLayout_2.addWidget(self.chenge_tilecolor)
+
+
+        self.verticalLayout.addWidget(self.frame_2)
 
         self.progressBar = QProgressBar(self.frame)
         self.progressBar.setObjectName(u"progressBar")
@@ -61,5 +94,9 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        self.label.setText(QCoreApplication.translate("Form", u"Done", None))
+        self.allnode.setText(QCoreApplication.translate("Form", u"All Nodes", None))
+        self.selnode.setText(QCoreApplication.translate("Form", u"Selected Node", None))
+        self.chenge_tilecolor.setText(QCoreApplication.translate("Form", u"Change Color", None))
     # retranslateUi
 
