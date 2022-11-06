@@ -1,16 +1,22 @@
-# -*- coding: utf-8 -*-
-
-################################################################################
-## Form generated from reading UI file 'progressbar.ui'
-##
-## Created by: Qt User Interface Compiler version 5.15.2
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
+
+
+class moWidget(QWidget):
+    def __int__(self, parent=None):
+        super(moWidget, self).__int__(parent)
+        self.parent = parent
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self.dragPosition = event.globalPos() - self.parent.frameGeometry().topLeft()
+            event.accept()
+
+    def mouseMoveEvent(self, event):
+        if event.buttons() == Qt.LeftButton:
+            self.parent.move(event.globalPos() - self.dragPosition)
+            event.accept()
 
 
 class Ui_Form(object):
@@ -20,11 +26,14 @@ class Ui_Form(object):
         Form.resize(400, 206)
         Form.setMinimumSize(QSize(400, 206))
         Form.setMaximumSize(QSize(400, 206))
+        Form.setWindowFlags(Qt.FramelessWindowHint)
+        Form.setAttribute(Qt.WA_TranslucentBackground)
+
         self.gridLayout = QGridLayout(Form)
         self.gridLayout.setSpacing(2)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(5, 5, 5, 5)
-        self.widget = QWidget(Form)
+        self.widget = moWidget(Form)
         self.widget.setObjectName(u"widget")
         self.gridLayout_2 = QGridLayout(self.widget)
         self.gridLayout_2.setSpacing(0)
@@ -63,14 +72,12 @@ class Ui_Form(object):
 
         self.horizontalLayout.addWidget(self.selnode)
 
-
         self.verticalLayout_2.addLayout(self.horizontalLayout)
 
         self.chenge_tilecolor = QPushButton(self.frame_2)
         self.chenge_tilecolor.setObjectName(u"chenge_tilecolor")
 
         self.verticalLayout_2.addWidget(self.chenge_tilecolor)
-
 
         self.verticalLayout.addWidget(self.frame_2)
 
@@ -80,16 +87,14 @@ class Ui_Form(object):
 
         self.verticalLayout.addWidget(self.progressBar)
 
-
         self.gridLayout_2.addWidget(self.frame, 0, 0, 1, 1)
 
-
         self.gridLayout.addWidget(self.widget, 0, 0, 1, 1)
-
 
         self.retranslateUi(Form)
 
         QMetaObject.connectSlotsByName(Form)
+
     # setupUi
 
     def retranslateUi(self, Form):
@@ -99,4 +104,3 @@ class Ui_Form(object):
         self.selnode.setText(QCoreApplication.translate("Form", u"Selected Node", None))
         self.chenge_tilecolor.setText(QCoreApplication.translate("Form", u"Change Color", None))
     # retranslateUi
-
